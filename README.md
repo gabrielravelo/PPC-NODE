@@ -1,4 +1,4 @@
-# Pay-Per-Click Web System
+# Pay-Per-Click Web System ✅
 
 A full-stack web application for managing and interacting with pay-per-click (PPC) ads. Users can register, log in, and click on banner ads. Admin users can manage ads and view click statistics.
 
