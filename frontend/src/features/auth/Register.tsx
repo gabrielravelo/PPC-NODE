@@ -11,7 +11,7 @@ export const Register = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
 
-    const registerPromise = API.post('/auth/register', { username, password })
+    const registerPromise = API.post('auth/register', { username, password })
     toast.promise(registerPromise, {
       loading: 'Creating account...',
       success: 'Account created successfully!',

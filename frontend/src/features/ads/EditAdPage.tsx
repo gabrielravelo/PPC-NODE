@@ -24,7 +24,7 @@ export const EditAdPage = () => {
   useEffect(() => {
     if (!id) return
     setLoading(true)
-    API.get(`/ads/${id}`)
+    API.get(`ads/${id}`)
       .then(res => {
         setForm({
           title: res.data.title,
@@ -44,7 +44,7 @@ export const EditAdPage = () => {
     e.preventDefault()
     setLoading(true)
     try {
-      await API.put(`/ads/${id}`, form)
+      await API.put(`ads/${id}`, form)
       toast.success('Ad updated successfully')
       navigate('/ads')
     } catch {

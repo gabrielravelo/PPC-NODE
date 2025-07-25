@@ -33,7 +33,7 @@ export const AdsPage = () => {
   
   const fetchAds = useCallback(async (pageNum: number) => {
     try {
-      const res = await API.get<PaginatedAds>(`/ads?page=${pageNum}&limit=5`)
+      const res = await API.get<PaginatedAds>(`ads?page=${pageNum}&limit=5`)
       setAds(res.data.data)
       setPage(res.data.page)
       setTotalPages(res.data.totalPages)
@@ -81,7 +81,7 @@ export const AdsPage = () => {
     if (isBlocked) return
 
     try {
-      await API.post(`/ads/${adId}/click`)
+      await API.post(`ads/${adId}/click`)
       const now = Date.now();
       localStorage.setItem('lastClickTime', now.toString());
       

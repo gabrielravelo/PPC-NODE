@@ -28,7 +28,7 @@ export const CreateAdPage = () => {
     e.preventDefault()
     setLoading(true)
     try {
-      await API.post('/ads', form)
+      await API.post('ads', form)
       toast.success('Ad created successfully')
       setForm({
         title: '',
