@@ -72,7 +72,7 @@ docker-compose up -d
 npx ts-node src/seed/seedAdmin.ts
 ```
 
-5. Start the server:
+5. Start the development server:
 
 ```bash
 npm run dev
@@ -90,7 +90,31 @@ npm run dev
 
 ## Frontend Setup
 
-Coming soon — React app under development (with auth flow and ad interaction UI).
+1. Clone the repository and enter the frontend folder:
+
+```bash
+git clone https://github.com/gabrielravelo/PPC-NODE.git
+cd PPC-NODE/frontend
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Create .env file in /frontend:
+
+```bash
+VITE_API_URL
+```
+
+4. Start the development server:
+
+```bash
+npm run dev
+```
+The frontend will run on http://localhost:5173 by default.
 
 ## License
 
