@@ -1,7 +1,12 @@
+
 import { Navigate } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 
-export const ProtectedRoute = ({ children }: { children: JSX.Element }) => {
+interface Props {
+  children: React.ReactNode
+}
+
+export const ProtectedRoute = ({ children }: Props) => {
   const { user, isLoading } = useAuth()
 
   if (isLoading) return <div>Loading...</div>

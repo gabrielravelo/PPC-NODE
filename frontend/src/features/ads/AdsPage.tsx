@@ -2,7 +2,6 @@ import { useEffect, useState, useCallback } from 'react'
 import toast from 'react-hot-toast'
 import { API } from '../../api/axios'
 import { useAuth } from '../../context/AuthContext'
-import { useNavigate } from 'react-router-dom'
 import { BackButton } from '../../components/BackButton'
 
 interface Ad {
@@ -31,7 +30,6 @@ export const AdsPage = () => {
   const [countdown, setCountdown] = useState(0)
   const [clickTimeout, setClickTimeout] = useState(30) // default
   const { user } = useAuth()
-  const navigate = useNavigate()
   
   const fetchAds = useCallback(async (pageNum: number) => {
     try {
