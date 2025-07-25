@@ -8,4 +8,5 @@ export const config = {
     MONGO_USER: env.get('MONGO_USER').required().asString(),
     MONGO_PASS: env.get('MONGO_PASS').required().asString(),
     MONGO_DB: env.get('MONGO_DB').required().asString(),
+    AD_CLICK_TIMEOUT_SECONDS: env.get('AD_CLICK_TIMEOUT_SECONDS').default(30).asIntPositive()
 }

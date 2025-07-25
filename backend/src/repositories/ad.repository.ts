@@ -5,6 +5,29 @@ export class AdRepository {
     return Ad.find().sort({ createdAt: -1 });
   }
 
+  async findPaginated(page: number, limit: number): Promise<{
+    data: IAd[];
+    total: number;
+    totalPages: number;
+    page: number;
+    limit: number;
+  }> {
+    const skip = (page - 1) * limit;
+
+    const [ads, total] = await Promise.all([
+      Ad.find().sort({ createdAt: -1 }).skip(skip).limit(limit),
+      Ad.countDocuments(),
+    ]);
+
+    return {
+      data: ads,
+      total,
+      totalPages: Math.ceil(total / limit),
+      page,
+      limit,
+    };
+  }
+
   async findById(id: string): Promise<IAd | null> {
     return Ad.findById(id);
   }
